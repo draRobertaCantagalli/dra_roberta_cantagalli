@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 type FloatingWhatsAppCtaProps = {
   whatsappUrl: string;
   observeElementId: string;
+  ctaVariant?: "A" | "B";
+  ctaText?: string;
 };
 
 export function FloatingWhatsAppCta({
   whatsappUrl,
   observeElementId,
+  ctaVariant = "A",
+  ctaText = "Agendar avaliação no WhatsApp",
 }: FloatingWhatsAppCtaProps) {
   const [hasPassedHeroCta, setHasPassedHeroCta] = useState(false);
 
@@ -46,9 +50,11 @@ export function FloatingWhatsAppCta({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="floating-mobile"
+            data-cta-variant={ctaVariant}
+            data-cta-text={ctaText}
             className="mx-auto block w-full max-w-xl rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-6 py-3 text-center font-semibold text-(--ink-900) shadow-[0_12px_26px_rgba(154,116,36,0.35)]"
           >
-            Agendar avaliação no WhatsApp
+            {ctaText}
           </a>
         </div>
       ) : null}
@@ -63,6 +69,8 @@ export function FloatingWhatsAppCta({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="floating-desktop"
+            data-cta-variant={ctaVariant}
+            data-cta-text="Agendar no WhatsApp"
             aria-label="Agendar no WhatsApp"
             title="Agendar no WhatsApp"
             className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/45 bg-[linear-gradient(145deg,var(--gold-soft)_0%,var(--gold)_55%,var(--gold-deep)_100%)] text-white shadow-[0_16px_30px_rgba(154,116,36,0.35)] transition hover:scale-105 hover:brightness-105"

@@ -139,7 +139,12 @@ function attachAttributionToWhatsappLinks(attr: MarketingAttribution) {
   });
 }
 
-function trackWhatsappClick(ctaPosition: string, attr: MarketingAttribution) {
+function trackWhatsappClick(
+  ctaPosition: string,
+  ctaVariant: string,
+  ctaText: string,
+  attr: MarketingAttribution,
+) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
@@ -148,6 +153,8 @@ function trackWhatsappClick(ctaPosition: string, attr: MarketingAttribution) {
     event_category: "engagement",
     event_label: ctaPosition,
     cta_position: ctaPosition,
+    cta_variant: ctaVariant,
+    cta_text: ctaText,
     source: attr.utm_source || "direct",
     medium: attr.utm_medium || "none",
     campaign: attr.utm_campaign || "none",
@@ -220,7 +227,18 @@ export function GaTracking({ gaId }: GaTrackingProps) {
       }
 
       const ctaPosition = link.dataset.cta || "unknown";
-      trackWhatsappClick(ctaPosition, readStoredAttribution());
+      const ctaVariant = link.dataset.ctaVariant || "A";
+      const ctaText =
+        link.dataset.ctaText ||
+        link.textContent?.trim() ||
+        link.getAttribute("aria-label") ||
+        "unknown";
+      trackWhatsappClick(
+        ctaPosition,
+        ctaVariant,
+        ctaText,
+        readStoredAttribution(),
+      );
     };
 
     document.addEventListener("click", onClick);

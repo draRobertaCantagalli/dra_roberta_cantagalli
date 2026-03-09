@@ -16,10 +16,15 @@ export default function Home() {
     process.env.NEXT_PUBLIC_CTA_VARIANT === "B"
       ? "Quero iniciar meu tratamento"
       : "Agendar avaliação no WhatsApp";
+  const ctaVariant = process.env.NEXT_PUBLIC_CTA_VARIANT === "B" ? "B" : "A";
 
   return (
     <div className="bg-(--sand-50) text-(--ink-900)">
-      <SiteHeader whatsappUrl={whatsappUrl} />
+      <SiteHeader
+        whatsappUrl={whatsappUrl}
+        ctaVariant={ctaVariant}
+        ctaText={ctaPrincipalLabel}
+      />
 
       <header className="relative isolate overflow-hidden border-b border-(--gold-deep)/35 px-6 pb-16 pt-12 sm:px-10 sm:pt-16 lg:px-16 lg:py-24">
         <div
@@ -67,6 +72,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               data-cta="hero"
+              data-cta-variant={ctaVariant}
+              data-cta-text={ctaPrincipalLabel}
               className="text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
             >
               {ctaPrincipalLabel}
@@ -192,6 +199,8 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             data-cta="contact"
+            data-cta-variant={ctaVariant}
+            data-cta-text={ctaPrincipalLabel}
             className="mt-7 inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-8 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
           >
             {ctaPrincipalLabel}
@@ -217,6 +226,8 @@ export default function Home() {
       <FloatingWhatsAppCta
         whatsappUrl={whatsappUrl}
         observeElementId="hero-whatsapp-cta"
+        ctaVariant={ctaVariant}
+        ctaText={ctaPrincipalLabel}
       />
     </div>
   );
