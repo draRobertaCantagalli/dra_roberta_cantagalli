@@ -1,0 +1,24 @@
+<svg width="720" height="840" viewBox="0 0 720 840" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Doctor portrait placeholder</title>
+  <desc id="desc">Illustration of a medical specialist in neutral tones.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3eee8"/>
+      <stop offset="100%" stop-color="#d6cbc0"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ece8e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="840" rx="40" fill="url(#bg)"/>
+  <circle cx="360" cy="286" r="110" fill="#d7b49a"/>
+  <path d="M244 272c16-60 66-92 116-92s96 32 116 92c-28-19-56-30-116-30s-88 11-116 30z" fill="#5b4a43"/>
+  <path d="M234 532c16-96 74-162 126-162h0c52 0 110 66 126 162v196H234V532z" fill="url(#coat)"/>
+  <path d="M306 532c10-34 30-76 54-106 24 30 44 72 54 106h-108z" fill="#c6b8aa"/>
+  <rect x="286" y="560" width="148" height="174" rx="20" fill="#faf7f2"/>
+  <circle cx="332" cy="298" r="10" fill="#3f2f28"/>
+  <circle cx="388" cy="298" r="10" fill="#3f2f28"/>
+  <path d="M332 342c22 16 34 16 56 0" stroke="#9b6b4a" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <rect x="250" y="630" width="220" height="16" rx="8" fill="#F2B266"/>
+</svg>

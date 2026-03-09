@@ -1,0 +1,11 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Microneedling protocol</title>
+  <desc id="desc">Illustration representing microneedling protocol.</desc>
+  <rect width="480" height="320" rx="24" fill="#f7f4ef"/>
+  <path d="M122 212c0-48 38-88 86-88h64c48 0 86 40 86 88v34H122v-34z" fill="#d8cab9"/>
+  <rect x="184" y="72" width="112" height="52" rx="14" fill="#91a1a6"/>
+  <rect x="220" y="124" width="40" height="122" rx="12" fill="#6f7e83"/>
+  <line x1="236" y1="194" x2="236" y2="250" stroke="#F2B266" stroke-width="5"/>
+  <line x1="246" y1="194" x2="246" y2="252" stroke="#F2B266" stroke-width="5"/>
+  <line x1="256" y1="194" x2="256" y2="250" stroke="#F2B266" stroke-width="5"/>
+</svg>

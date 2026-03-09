@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Default theme tokens (luxury) */
+:root {
+  --background: #f6eee1;
+  --foreground: #2b2118;
+  --gold: #ba9c77;
+  --gold-soft: #c7ab88;
+  --gold-deep: #8f7353;
+  --ink-900: #2b2118;
+  --ink-800: #3a2e23;
+  --ink-700: #655444;
+  --sand-50: #f0e5d3;
+  --sand-100: #ebdecb;
+  --sand-200: #e3d4bf;
+  --sand-300: #d7c0a2;
+  --surface: #fbf5ec;
+  --surface-soft: #f5ead9;
+  --hero-1: #f0e5d3;
+  --hero-2: #e3d4bf;
+  --hero-3: #d7c0a2;
+}
+
+/* Mood 1: Luxurious and editorial */
+html[data-theme="luxury"] {
+  --background: #f5ebdd;
+  --foreground: #2b2016;
+  --gold: #b49268;
+  --gold-soft: #c7a884;
+  --gold-deep: #856543;
+  --ink-900: #2b2016;
+  --ink-800: #3d3024;
+  --ink-700: #6b5948;
+  --sand-50: #f0e5d3;
+  --sand-100: #ecdeca;
+  --sand-200: #e4d4bf;
+  --sand-300: #d4b994;
+  --surface: #faf2e7;
+  --surface-soft: #f1e2ce;
+  --hero-1: #efe1cd;
+  --hero-2: #e1ccb1;
+  --hero-3: #caaa82;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), serif;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header,
+main section {
+  animation: riseIn 700ms ease-out both;
+}
