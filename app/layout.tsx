@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { GaTracking } from "@/components/analytics/ga-tracking";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from '@vercel/analytics/next';
 import { SiteFooter } from "@/components/layout/site-footer";
 import "./globals.css";
 
@@ -67,6 +68,7 @@ export default function RootLayout({
         </div>
         <GaTracking gaId={gaId} />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
