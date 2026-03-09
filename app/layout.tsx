@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { GaTracking } from "@/components/analytics/ga-tracking";
 import { SiteFooter } from "@/components/layout/site-footer";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://drarobertacantagalli.com.br";
 const ogImage = "/opengraph-image.jpg";
+const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-NRZZSDFLEH";
 const title = "Dra. Roberta Cantagalli - Tricologia & Saúde Capilar Integrativa";
 const description =
   "Especialista em tricologia clínica e saúde capilar integrativa. Avaliação personalizada, tratamentos avançados para queda de cabelo, fortalecimento dos fios e acompanhamento pré/pós-transplante capilar. Ciência, cuidado e confiança para a saúde dos seus cabelos.";
@@ -63,6 +65,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
+        <GaTracking gaId={gaId} />
         <SpeedInsights />
       </body>
     </html>
