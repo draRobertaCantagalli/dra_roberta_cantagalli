@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import "./globals.css";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://drarobertacantagalli.com.br";
+const ogImage = "/opengraph-image.jpg";
+const title = "Dra. Roberta Cantagalli - Tricologia & Saúde Capilar Integrativa";
+const description =
+  "Especialista em tricologia clínica e saúde capilar integrativa. Avaliação personalizada, tratamentos avançados para queda de cabelo, fortalecimento dos fios e acompanhamento pré/pós-transplante capilar. Ciência, cuidado e confiança para a saúde dos seus cabelos.";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -16,9 +23,32 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Dra. Roberta Cantagalli - Tricologia & Saúde Capilar Integrativa",
-  description:
-    "Especialista em tricologia clínica e saúde capilar integrativa. Avaliação personalizada, tratamentos avançados para queda de cabelo, fortalecimento dos fios e acompanhamento pré/pós-transplante capilar. Ciência, cuidado e confiança para a saúde dos seus cabelos.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "Dra. Roberta Cantagalli",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: ogImage,
+        alt: "Dra. Roberta Cantagalli - Tricologia e Saúde Capilar Integrativa",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +63,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );

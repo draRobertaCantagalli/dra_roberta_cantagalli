@@ -22,11 +22,11 @@ export const heroBackground = {
 
 export const services: ServiceItem[] = [
   {
-    title: "Análise Capilar com Câmera",
+    title: "Análise Capilar com Tricoscópio",
     problem: "Identificar com precisão a causa da queda e da inflamação.",
     outcome: "Mapeamento detalhado para um plano terapêutico assertivo.",
     image: "/protocol-camera.svg",
-    alt: "Protocolo de análise capilar com câmera",
+    alt: "Protocolo de análise capilar com tricoscópio",
   },
   {
     title: "Microagulhamento no Couro Cabeludo",
