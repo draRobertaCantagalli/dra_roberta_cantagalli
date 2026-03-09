@@ -12,6 +12,10 @@ export default function Home() {
   const whatsappMessage =
     "Olá! Gostaria de agendar uma avaliação capilar com a Dra. Roberta.";
   const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+  const ctaPrincipalLabel =
+    process.env.NEXT_PUBLIC_CTA_VARIANT === "B"
+      ? "Quero iniciar meu tratamento"
+      : "Agendar avaliação no WhatsApp";
 
   return (
     <div className="bg-(--sand-50) text-(--ink-900)">
@@ -62,10 +66,23 @@ export default function Home() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
+              data-cta="hero"
+              className="text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
             >
-              Agende sua avaliação no WhatsApp
+              {ctaPrincipalLabel}
             </a>
+
+            <div className="flex flex-wrap gap-2">
+              <span className="rounded-full border border-white/35 bg-[rgba(255,255,255,0.12)] px-3 py-1 text-xs font-semibold text-[rgba(255,244,230,0.95)]">
+                Atendimento individualizado
+              </span>
+              <span className="rounded-full border border-white/35 bg-[rgba(255,255,255,0.12)] px-3 py-1 text-xs font-semibold text-[rgba(255,244,230,0.95)]">
+                Avaliação detalhada
+              </span>
+              <span className="rounded-full border border-white/35 bg-[rgba(255,255,255,0.12)] px-3 py-1 text-xs font-semibold text-[rgba(255,244,230,0.95)]">
+                Protocolos baseados em evidência
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -106,7 +123,14 @@ export default function Home() {
                 />
                 <div className="space-y-3 p-6">
                   <h3 className="text-2xl">{service.title}</h3>
-                  <p className="text-(--ink-700)">{service.description}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                    Problema
+                  </p>
+                  <p className="text-(--ink-700)">{service.problem}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                    Resultado Esperado
+                  </p>
+                  <p className="text-(--ink-700)">{service.outcome}</p>
                 </div>
               </article>
             ))}
@@ -127,6 +151,14 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--gold-deep)">
               Uma Vivência Que Mudou Minha Prática
             </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
+                Atendimento Individualizado
+              </span>
+              <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
+                Conduta Baseada em Evidência
+              </span>
+            </div>
             <blockquote className="mt-4 space-y-3 text-lg leading-relaxed text-(--ink-800) sm:text-xl">
               <p>
                 Minha jornada pessoal me ensinou que, muitas vezes, estar dentro
@@ -158,9 +190,10 @@ export default function Home() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            data-cta="contact"
             className="mt-7 inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-8 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
           >
-            Falar no WhatsApp
+            {ctaPrincipalLabel}
           </a>
         </section>
 

@@ -40,14 +40,15 @@ export function FloatingWhatsAppCta({
   return (
     <>
       {showMobileCta ? (
-        <div className="fixed inset-x-0 bottom-0 z-20 border-t p-3 backdrop-blur md:hidden">
+        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-(--gold-deep)/25 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(247,244,236,0.98))] p-3 backdrop-blur md:hidden">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            data-cta="floating-mobile"
             className="mx-auto block w-full max-w-xl rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-6 py-3 text-center font-semibold text-(--ink-900) shadow-[0_12px_26px_rgba(154,116,36,0.35)]"
           >
-            Agende sua avaliação no WhatsApp
+            Agendar avaliação no WhatsApp
           </a>
         </div>
       ) : null}
@@ -61,6 +62,7 @@ export function FloatingWhatsAppCta({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            data-cta="floating-desktop"
             aria-label="Agendar no WhatsApp"
             title="Agendar no WhatsApp"
             className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/45 bg-[linear-gradient(145deg,var(--gold-soft)_0%,var(--gold)_55%,var(--gold-deep)_100%)] text-white shadow-[0_16px_30px_rgba(154,116,36,0.35)] transition hover:scale-105 hover:brightness-105"

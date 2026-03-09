@@ -14,9 +14,10 @@ export function SiteHeader({ whatsappUrl }: SiteHeaderProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          data-cta="header"
           className="rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_55%,var(--gold-deep)_100%)] px-4 py-2 text-xs font-semibold text-(--ink-900) shadow-[0_8px_18px_rgba(154,116,36,0.26)] transition hover:brightness-105 sm:px-5 sm:text-sm"
         >
-          Agendar
+          Agendar avaliação
         </a>
       </div>
     </div>

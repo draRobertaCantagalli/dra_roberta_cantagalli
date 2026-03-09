@@ -1,6 +1,7 @@
 export type ServiceItem = {
   title: string;
-  description: string;
+  problem: string;
+  outcome: string;
   image: string;
   alt: string;
 };
@@ -22,25 +23,29 @@ export const heroBackground = {
 export const services: ServiceItem[] = [
   {
     title: "Análise Capilar com Câmera",
-    description: "Avaliação de couro cabeludo e folículos com alta precisão",
+    problem: "Identificar com precisão a causa da queda e da inflamação.",
+    outcome: "Mapeamento detalhado para um plano terapêutico assertivo.",
     image: "/protocol-camera.svg",
     alt: "Protocolo de análise capilar com câmera",
   },
   {
     title: "Microagulhamento no Couro Cabeludo",
-    description: "Protocolo de estimulação controlada para suporte capilar",
+    problem: "Estimular áreas com afinamento e baixa resposta capilar.",
+    outcome: "Suporte à densidade e fortalecimento dos fios no protocolo.",
     image: "/protocol-microneedling.svg",
     alt: "Protocolo de microagulhamento no couro cabeludo",
   },
   {
     title: "Terapia a Laser",
-    description: "Protocolo moderno com luz para saúde capilar",
+    problem: "Tratar desequilíbrios do couro cabeludo com abordagem não invasiva.",
+    outcome: "Melhora do ambiente capilar para crescimento saudável.",
     image: "/protocol-laser.svg",
     alt: "Protocolo de terapia a laser",
   },
   {
     title: "Prescrição Personalizada",
-    description: "Planejamento clínico individualizado para cada caso",
+    problem: "Evitar protocolos genéricos que não respeitam sua história clínica.",
+    outcome: "Conduta individualizada com acompanhamento próximo da evolução.",
     image: "/protocol-camera.svg",
     alt: "Protocolo de prescrição clínica personalizada",
   },
@@ -63,23 +68,23 @@ export const approachFoundations: BulletItem[] = [
 
 export const faqs: FaqItem[] = [
   {
-    question: "Quais problemas capilares são tratados aqui?",
+    question: "Esse tratamento é para o meu caso?",
     answer:
-      "Queda capilar, falhas, inflamação do couro cabeludo, descamação, oleosidade excessiva e cuidado de apoio antes e depois do transplante.",
+      "Na avaliação clínica, investigamos a causa da sua queda e definimos se o protocolo é indicado para o seu perfil, histórico e fase da vida.",
   },
   {
-    question: "Como funciona a consulta?",
+    question: "Como funciona a primeira consulta?",
     answer:
-      "Você recebe uma avaliação detalhada, mapeamento clínico do seu couro cabeludo e dos fios, e um protocolo personalizado.",
+      "Você passa por avaliação clínica detalhada do couro cabeludo e dos fios, e já sai com direcionamento inicial e próximos passos do seu plano.",
   },
   {
-    question: "É indicado para homens e mulheres?",
+    question: "Em quanto tempo começo a perceber resultados?",
     answer:
-      "Sim. A avaliação e o plano de tratamento são adaptados para cada pessoa e fase da vida.",
+      "Isso varia de acordo com a causa da queda e adesão ao protocolo. Em geral, os primeiros sinais aparecem nas primeiras semanas, com evolução progressiva.",
   },
   {
-    question: "Quais são os diferenciais da clínica?",
+    question: "Os procedimentos são dolorosos?",
     answer:
-      "Visão integrativa, protocolos baseados em evidência e acompanhamento próximo com transparência.",
+      "A maior parte dos protocolos é bem tolerada. Quando necessário, ajustamos técnica e conforto para que o tratamento seja seguro e tranquilo.",
   },
 ];
