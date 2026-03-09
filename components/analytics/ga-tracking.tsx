@@ -24,6 +24,17 @@ type MarketingAttribution = {
 
 const ATTR_KEY = "marketing_attribution_v1";
 const ATTR_MARKER = "[origem]";
+const BOT_UA_REGEX =
+  /bot|crawler|spider|crawling|HeadlessChrome|Lighthouse|PageSpeed|GTmetrix|Pingdom|BingPreview|facebookexternalhit|Slackbot|Discordbot|Vercelbot|Google-InspectionTool|GoogleOther/i;
+
+function isLikelyBotUserAgent(): boolean {
+  if (typeof navigator === "undefined") {
+    return false;
+  }
+
+  const ua = navigator.userAgent || "";
+  return BOT_UA_REGEX.test(ua) || navigator.webdriver === true;
+}
 
 function readStoredAttribution(): MarketingAttribution {
   if (typeof window === "undefined") {
@@ -188,6 +199,10 @@ export function GaTracking({ gaId }: GaTrackingProps) {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (isLikelyBotUserAgent()) {
+      return;
+    }
+
     const mergedAttribution = mergeAttribution(
       readStoredAttribution(),
       readAttributionFromUrl(),
@@ -213,6 +228,10 @@ export function GaTracking({ gaId }: GaTrackingProps) {
   }, []);
 
   useEffect(() => {
+    if (isLikelyBotUserAgent()) {
+      return;
+    }
+
     const mergedAttribution = mergeAttribution(
       readStoredAttribution(),
       readAttributionFromUrl(),
@@ -229,11 +248,17 @@ export function GaTracking({ gaId }: GaTrackingProps) {
       />
       <Script id="ga4-init" strategy="afterInteractive">
         {`
+          var ua = navigator.userAgent || '';
+          var isBot = /bot|crawler|spider|crawling|HeadlessChrome|Lighthouse|PageSpeed|GTmetrix|Pingdom|BingPreview|facebookexternalhit|Slackbot|Discordbot|Vercelbot|Google-InspectionTool|GoogleOther/i.test(ua);
+          if (isBot || navigator.webdriver === true) {
+            window.__gaBlockedForBot = true;
+          } else {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${gaId}', { send_page_view: false });
+          }
         `}
       </Script>
     </>
