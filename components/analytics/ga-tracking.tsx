@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
@@ -186,7 +186,6 @@ type GaTrackingProps = {
 
 export function GaTracking({ gaId }: GaTrackingProps) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const mergedAttribution = mergeAttribution(
@@ -220,7 +219,7 @@ export function GaTracking({ gaId }: GaTrackingProps) {
     );
 
     trackPageViewWhenReady(mergedAttribution);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <>
