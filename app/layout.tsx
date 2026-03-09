@@ -12,6 +12,19 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-NRZZSDFLEH";
 const title = "Dra. Roberta Cantagalli - Tricologia & Saúde Capilar Integrativa";
 const description =
   "Especialista em tricologia clínica e saúde capilar integrativa. Avaliação personalizada, tratamentos avançados para queda de cabelo, fortalecimento dos fios e acompanhamento pré/pós-transplante capilar. Ciência, cuidado e confiança para a saúde dos seus cabelos.";
+const phoneNumber = "+55 11 95580-3300";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["Physician", "MedicalClinic"],
+  name: "Dra. Roberta Cantagalli",
+  description,
+  url: siteUrl,
+  image: `${siteUrl}${ogImage}`,
+  telephone: phoneNumber,
+  medicalSpecialty: "Tricology",
+  areaServed: "BR",
+};
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -29,6 +42,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "/",
   },
@@ -62,6 +86,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" data-theme="luxury">
       <body className={`${display.variable} ${body.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          // JSON-LD helps search engines understand the clinic entity.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <div className="flex min-h-screen flex-col">
           <div className="flex-1">{children}</div>
           <SiteFooter />
