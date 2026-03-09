@@ -159,8 +159,9 @@ export default function Home() {
                 Conduta Baseada em Evidência
               </span>
             </div>
-            <blockquote className="mt-4 space-y-3 text-lg leading-relaxed text-(--ink-800) sm:text-xl">
-              <p>
+            <blockquote className="mt-4 space-y-3 text-lg leading-relaxed italic text-(--ink-800) sm:text-xl">
+              <p className="indent-6">
+                <span className="font-semibold text-(--gold-deep)">&ldquo;</span>{" "}
                 Minha jornada pessoal me ensinou que, muitas vezes, estar dentro
                 da referência nem sempre significa estar saudável.
               </p>
@@ -174,7 +175,7 @@ export default function Home() {
                 de ter recebido.
               </p>
               <p className="font-semibold text-(--gold-deep)">
-                A queda capilar não é um evento isolado: ela é um reflexo.
+                A queda capilar não é um evento isolado: ela é um reflexo.&rdquo;
               </p>
             </blockquote>
           </div>
