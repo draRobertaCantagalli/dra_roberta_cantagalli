@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { FloatingWhatsAppCta } from "@/components/floating-whatsapp-cta";
+import { SiteHeader } from "@/components/layout/site-header";
 import {
   faqs,
   heroBackground,
   services,
-  whoCanBeTreated,
 } from "@/lib/home-content";
 
 export default function Home() {
@@ -15,6 +15,8 @@ export default function Home() {
 
   return (
     <div className="bg-(--sand-50) text-(--ink-900)">
+      <SiteHeader whatsappUrl={whatsappUrl} />
+
       <header className="relative isolate overflow-hidden border-b border-(--gold-deep)/35 px-6 pb-16 pt-12 sm:px-10 sm:pt-16 lg:px-16 lg:py-24">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
@@ -123,13 +125,25 @@ export default function Home() {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--gold-deep)">
-              Sobre e Depoimento
+              Uma Vivência Que Mudou Minha Prática
             </p>
-            <blockquote className="mt-4 text-xl italic leading-relaxed text-(--ink-800) sm:text-2xl">
-              &quot;Minha jornada pessoal me ensinou que estar &#39;dentro dos
-              valores de referência&#39; nem sempre significa estar saudável.
-              Hoje, investigo a queda capilar com o mesmo cuidado que eu
-              gostaria de ter recebido...&quot;
+            <blockquote className="mt-4 space-y-3 text-lg leading-relaxed text-(--ink-800) sm:text-xl">
+              <p>
+                Minha jornada pessoal me ensinou que, muitas vezes, estar dentro
+                da referência nem sempre significa estar saudável.
+              </p>
+              <p>
+                Eu sei o que é perceber que algo está errado e ouvir que está
+                tudo normal. Foi essa experiência que transformou minha forma de
+                atuar.
+              </p>
+              <p>
+                Hoje, investigo a queda capilar com o mesmo cuidado que gostaria
+                de ter recebido.
+              </p>
+              <p className="font-semibold text-(--gold-deep)">
+                A queda capilar não é um evento isolado: ela é um reflexo.
+              </p>
             </blockquote>
           </div>
         </section>
@@ -150,21 +164,9 @@ export default function Home() {
           </a>
         </section>
 
-        <section className="mx-auto mt-16 w-full max-w-5xl rounded-3xl border border-(--sand-300) bg-[linear-gradient(145deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
+        <section id="faq" className="mx-auto mt-16 w-full max-w-5xl scroll-mt-24 rounded-3xl border border-(--sand-300) bg-[linear-gradient(145deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
           <h2 className="text-3xl sm:text-4xl">Perguntas Frequentes</h2>
           <div className="mt-7 space-y-5">
-            <article>
-              <h3 className="text-lg font-semibold text-(--ink-900)">
-                Quem pode ser tratado?
-              </h3>
-              <div className="mt-2 space-y-1">
-                {whoCanBeTreated.map((item) => (
-                  <p key={item.label} className="text-(--ink-700)">
-                    {item.label}
-                  </p>
-                ))}
-              </div>
-            </article>
             {faqs.map((faq) => (
               <article key={faq.question}>
                 <h3 className="text-lg font-semibold text-(--ink-900)">

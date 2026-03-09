@@ -61,11 +61,6 @@ export const approachFoundations: BulletItem[] = [
   { label: "Biomedicina" },
 ];
 
-export const whoCanBeTreated: BulletItem[] = [
-  { label: "Homens e mulheres de todas as idades" },
-  { label: "Avaliação para todas as causas de queda capilar" },
-];
-
 export const faqs: FaqItem[] = [
   {
     question: "Quais problemas capilares são tratados aqui?",
