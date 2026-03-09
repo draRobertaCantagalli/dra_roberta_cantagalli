@@ -17,13 +17,14 @@ export default function Home() {
       ? "Quero iniciar meu tratamento"
       : "Agendar avaliação no WhatsApp";
   const ctaVariant = process.env.NEXT_PUBLIC_CTA_VARIANT === "B" ? "B" : "A";
+  const ctaHeaderLabel = "Agendar";
 
   return (
     <div className="bg-(--sand-50) text-(--ink-900)">
       <SiteHeader
         whatsappUrl={whatsappUrl}
         ctaVariant={ctaVariant}
-        ctaText={ctaPrincipalLabel}
+        ctaText={ctaHeaderLabel}
       />
 
       <header className="relative isolate overflow-hidden border-b border-(--gold-deep)/35 px-6 pb-16 pt-12 sm:px-10 sm:pt-16 lg:px-16 lg:py-24">
