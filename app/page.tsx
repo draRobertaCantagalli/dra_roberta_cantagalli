@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { FloatingWhatsAppCta } from "@/components/floating-whatsapp-cta";
 import {
-  approachFoundations,
-  differentiatedApproach,
   faqs,
   heroBackground,
   services,
@@ -82,6 +80,10 @@ export default function Home() {
               clínica precoce ajuda a identificar o que está acontecendo e
               direcionar um tratamento mais seguro.
             </p>
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-(--gold-deep)">
+              Atendimento personalizado, visão integrativa e protocolos baseados
+              em evidência.
+            </p>
           </article>
         </section>
 
@@ -129,32 +131,6 @@ export default function Home() {
               Hoje, investigo a queda capilar com o mesmo cuidado que eu
               gostaria de ter recebido...&quot;
             </blockquote>
-          </div>
-        </section>
-
-        <section className="mx-auto mt-16 w-full max-w-5xl rounded-3xl border border-(--sand-300)/80 bg-[linear-gradient(145deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
-          <h2 className="text-3xl sm:text-4xl">Abordagem Diferenciada</h2>
-          <div className="mt-5 space-y-3">
-            {differentiatedApproach.map((item) => (
-              <p key={item.label} className="text-base text-(--ink-700) sm:text-lg">
-                {item.label}
-              </p>
-            ))}
-          </div>
-          <div className="mt-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--gold-deep)">
-              Pilares
-            </p>
-            <div className="mt-3 flex flex-wrap gap-3">
-              {approachFoundations.map((item) => (
-                <span
-                  key={item.label}
-                  className="rounded-full border border-(--sand-300) bg-[linear-gradient(145deg,var(--surface-soft),#fff)] px-4 py-2 text-sm font-semibold text-(--ink-800)"
-                >
-                  {item.label}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
