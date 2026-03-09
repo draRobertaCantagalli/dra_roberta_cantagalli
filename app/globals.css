@@ -1,45 +1,45 @@
 @import "tailwindcss";
 
-/* Default theme tokens (luxury) */
+/* Default theme tokens (gold-led luxury) */
 :root {
-  --background: #f6eee1;
-  --foreground: #2b2118;
-  --gold: #ba9c77;
-  --gold-soft: #c7ab88;
-  --gold-deep: #8f7353;
-  --ink-900: #2b2118;
-  --ink-800: #3a2e23;
-  --ink-700: #655444;
-  --sand-50: #f0e5d3;
-  --sand-100: #ebdecb;
-  --sand-200: #e3d4bf;
-  --sand-300: #d7c0a2;
-  --surface: #fbf5ec;
-  --surface-soft: #f5ead9;
-  --hero-1: #f0e5d3;
-  --hero-2: #e3d4bf;
-  --hero-3: #d7c0a2;
+  --background: #f7f4ec;
+  --foreground: #1a1a1a;
+  --gold: #c9a24a;
+  --gold-soft: #e7c873;
+  --gold-deep: #9a7424;
+  --ink-900: #1a1a1a;
+  --ink-800: #2a2a2a;
+  --ink-700: #6b6b6b;
+  --sand-50: #f7f4ec;
+  --sand-100: #f1e8d1;
+  --sand-200: #ead9ad;
+  --sand-300: #d4b66d;
+  --surface: #ffffff;
+  --surface-soft: #fbf8f0;
+  --hero-1: #f6e7c2;
+  --hero-2: #ead19a;
+  --hero-3: #c9a24a;
 }
 
 /* Mood 1: Luxurious and editorial */
 html[data-theme="luxury"] {
-  --background: #f5ebdd;
-  --foreground: #2b2016;
-  --gold: #b49268;
-  --gold-soft: #c7a884;
-  --gold-deep: #856543;
-  --ink-900: #2b2016;
-  --ink-800: #3d3024;
-  --ink-700: #6b5948;
-  --sand-50: #f0e5d3;
-  --sand-100: #ecdeca;
-  --sand-200: #e4d4bf;
-  --sand-300: #d4b994;
-  --surface: #faf2e7;
-  --surface-soft: #f1e2ce;
-  --hero-1: #efe1cd;
-  --hero-2: #e1ccb1;
-  --hero-3: #caaa82;
+  --background: #f7f4ec;
+  --foreground: #1a1a1a;
+  --gold: #c9a24a;
+  --gold-soft: #e7c873;
+  --gold-deep: #9a7424;
+  --ink-900: #1a1a1a;
+  --ink-800: #2a2a2a;
+  --ink-700: #6b6b6b;
+  --sand-50: #f7f4ec;
+  --sand-100: #f1e8d1;
+  --sand-200: #ead9ad;
+  --sand-300: #d4b66d;
+  --surface: #ffffff;
+  --surface-soft: #fbf8f0;
+  --hero-1: #f6e7c2;
+  --hero-2: #ead19a;
+  --hero-3: #c9a24a;
 }
 
 @theme inline {
@@ -50,7 +50,10 @@ html[data-theme="luxury"] {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(231, 200, 115, 0.14), transparent 34%),
+    radial-gradient(circle at 92% 0%, rgba(154, 116, 36, 0.08), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, var(--background) 36%, #f5efdf 100%);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
 }
