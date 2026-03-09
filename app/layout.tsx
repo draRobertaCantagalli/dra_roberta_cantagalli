@@ -16,9 +16,9 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Clinica de Saude Capilar Integrativa",
+  title: "Dra. Roberta Cantagalli - Tricologia & Saúde Capilar Integrativa",
   description:
-    "Landing page de clinica moderna de tricologia com foco em saude capilar integrativa.",
+    "Especialista em tricologia clínica e saúde capilar integrativa. Avaliação personalizada, tratamentos avançados para queda de cabelo, fortalecimento dos fios e acompanhamento pré/pós-transplante capilar. Ciência, cuidado e confiança para a saúde dos seus cabelos.",
 };
 
 export default function RootLayout({

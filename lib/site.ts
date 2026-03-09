@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Clinica Dra. Roberta Cantagalli",
-  trustCopy: "Ciencia, cuidado e transparencia para a saude dos seus cabelos.",
+  name: "Clínica Dra. Roberta Cantagalli",
+  trustCopy: "Ciência, cuidado e transparência para a saúde dos seus cabelos.",
   footerCopy:
-    "Tricologia premium e cuidado capilar integrativo, com acompanhamento clinico individualizado.",
+    "Tricologia premium e cuidado capilar integrativo, com acompanhamento clínico individualizado.",
 } as const;
