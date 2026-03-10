@@ -51,21 +51,6 @@ export const services: ServiceItem[] = [
   },
 ];
 
-export const differentiatedApproach: BulletItem[] = [
-  { label: "Aqui, a avaliação é personalizada." },
-  {
-    label:
-      "Eu não analiso apenas o fio: cada caso de queda capilar tem sua própria história.",
-  },
-  { label: "Protocolos modernos com abordagem multidisciplinar." },
-];
-
-export const approachFoundations: BulletItem[] = [
-  { label: "Saúde" },
-  { label: "Nutrição" },
-  { label: "Biomedicina" },
-];
-
 export const faqs: FaqItem[] = [
   {
     question: "Esse tratamento é para o meu caso?",
