@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FloatingWhatsAppCta } from "@/components/floating-whatsapp-cta";
 import { SiteHeader } from "@/components/layout/site-header";
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import {
   faqs,
   heroBackground,
@@ -74,7 +75,7 @@ export default function Home() {
               data-cta="hero"
               data-cta-variant={ctaVariant}
               data-cta-text={ctaPrincipalLabel}
-              className="text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
+              className="gold-luster gold-luster-strong text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-sm sm:text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
             >
               {ctaPrincipalLabel}
             </a>
@@ -95,133 +96,146 @@ export default function Home() {
       </section>
 
       <main className="px-6 pb-16 sm:px-10 lg:px-16">
-        <section className="mx-auto mt-16 w-full max-w-6xl">
-          <article className="rounded-3xl border border-(--sand-300)/80 bg-[linear-gradient(160deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
-            <h2 className="text-3xl leading-tight sm:text-4xl">
-              Seu cabelo está caindo mais do que o normal?
-            </h2>
-            <p className="mt-4 max-w-3xl text-base text-(--ink-700) sm:text-lg">
-              Muitas pessoas percebem mudanças no volume, na densidade ou no
-              conforto do couro cabeludo e demoram para investigar. A avaliação
-              clínica precoce ajuda a identificar o que está acontecendo e
-              direcionar um tratamento mais seguro.
-            </p>
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-(--gold-deep)">
-              Atendimento personalizado, visão integrativa e protocolos baseados
-              em evidência.
-            </p>
-          </article>
-        </section>
+        <RevealOnScroll>
+          <section className="mx-auto mt-16 w-full max-w-6xl">
+            <article className="rounded-3xl border border-(--sand-300)/80 bg-[linear-gradient(160deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
+              <h2 className="text-3xl leading-tight sm:text-4xl">
+                Seu cabelo está caindo mais do que o normal?
+              </h2>
+              <p className="mt-4 max-w-3xl text-base text-(--ink-700) sm:text-lg">
+                Muitas pessoas percebem mudanças no volume, na densidade ou no
+                conforto do couro cabeludo e demoram para investigar. A avaliação
+                clínica precoce ajuda a identificar o que está acontecendo e
+                direcionar um tratamento mais seguro.
+              </p>
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-(--gold-deep)">
+                Atendimento personalizado, visão integrativa e protocolos baseados
+                em evidência.
+              </p>
+            </article>
+          </section>
+        </RevealOnScroll>
 
-        <section className="mx-auto mt-16 w-full max-w-6xl">
-          <h2 className="text-3xl sm:text-4xl">Principais Serviços e Abordagens</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {services.map((service) => (
-              <article
-                key={service.title}
-                className="group overflow-hidden rounded-3xl border border-(--sand-300)/85 bg-[linear-gradient(165deg,#fff_0%,var(--surface-soft)_100%)] shadow-[0_14px_28px_rgba(154,116,36,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_35px_rgba(154,116,36,0.18)]"
-              >
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  width={1200}
-                  height={800}
-                  className="h-44 sm:h-46 lg:h-60 w-full object-cover object-center"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
-                />
-                <div className="space-y-3 p-6">
-                  <h3 className="text-2xl">{service.title}</h3>
-                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
-                    Problema
-                  </p>
-                  <p className="text-(--ink-700)">{service.problem}</p>
-                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
-                    Resultado Esperado
-                  </p>
-                  <p className="text-(--ink-700)">{service.outcome}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto mt-16 grid w-full max-w-5xl items-center gap-8 rounded-3xl border border-(--sand-300) bg-[linear-gradient(130deg,#fff_0%,var(--surface-soft)_58%,rgba(231,200,115,0.2)_100%)] p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="overflow-hidden rounded-2xl border border-white/70 bg-(--surface)/70">
-            <Image
-              src="/home/testemunho/dra_roberta.webp"
-              alt="Dra. Roberta Cantagalli"
-              width={1080}
-              height={1417}
-              className="h-auto w-full"
-              sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 420px"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--gold-deep)">
-              Uma Vivência Que Mudou Minha Prática
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
-                Atendimento Individualizado
-              </span>
-              <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
-                Conduta Baseada em Evidência
-              </span>
+        <RevealOnScroll>
+          <section className="mx-auto mt-16 w-full max-w-6xl">
+            <h2 className="text-3xl sm:text-4xl">Principais Serviços e Abordagens</h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {services.map((service, index) => (
+                <RevealOnScroll key={service.title} delayMs={index * 90}>
+                  <article className="group overflow-hidden rounded-3xl border border-(--sand-300)/85 bg-[linear-gradient(165deg,#fff_0%,var(--surface-soft)_100%)] shadow-[0_14px_28px_rgba(154,116,36,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_35px_rgba(154,116,36,0.18)]">
+                    <Image
+                      src={service.image}
+                      alt={service.alt}
+                      width={1200}
+                      height={800}
+                      className="h-44 sm:h-46 lg:h-60 w-full object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="space-y-3 p-6">
+                      <h3 className="text-2xl">{service.title}</h3>
+                      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                        Problema
+                      </p>
+                      <p className="text-(--ink-700)">{service.problem}</p>
+                      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                        Resultado Esperado
+                      </p>
+                      <p className="text-(--ink-700)">{service.outcome}</p>
+                    </div>
+                  </article>
+                </RevealOnScroll>
+              ))}
             </div>
-            <blockquote className="mt-4 space-y-3 text-lg leading-relaxed italic text-(--ink-800) sm:text-xl">
-              <p className="indent-6">
-                <span className="font-semibold text-(--gold-deep)">&ldquo;</span>{" "}
-                Minha jornada pessoal me ensinou que, muitas vezes, estar dentro
-                da referência nem sempre significa estar saudável.
-              </p>
-              <p>
-                Eu sei o que é perceber que algo está errado e ouvir que está
-                tudo normal. Foi essa experiência que transformou minha forma de
-                atuar.
-              </p>
-              <p>
-                Hoje, investigo a queda capilar com o mesmo cuidado que gostaria
-                de ter recebido.
-              </p>
-              <p className="font-semibold text-(--gold-deep)">
-                A queda capilar não é um evento isolado: ela é um reflexo.&rdquo;
-              </p>
-            </blockquote>
-          </div>
-        </section>
+          </section>
+        </RevealOnScroll>
 
-        <section id="contact" className="mx-auto mt-16 w-full max-w-5xl rounded-3xl border border-(--gold-deep)/30 bg-[linear-gradient(160deg,rgba(231,200,115,0.2)_0%,rgba(255,255,255,0.95)_45%,rgba(201,162,74,0.17)_100%)] px-6 py-10 text-center sm:px-10">
-          <h2 className="text-3xl sm:text-4xl">Pronta para iniciar seu plano de cuidado?</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-(--ink-700)">
-            Agende sua avaliação personalizada e receba um protocolo desenhado
-            para os seus objetivos de saúde capilar.
-          </p>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="contact"
-            data-cta-variant={ctaVariant}
-            data-cta-text={ctaPrincipalLabel}
-            className="mt-7 inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-8 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
-          >
-            {ctaPrincipalLabel}
-          </a>
-        </section>
+        <RevealOnScroll>
+          <section className="mx-auto mt-16 grid w-full max-w-5xl items-center gap-8 rounded-3xl border border-(--sand-300) bg-[linear-gradient(130deg,#fff_0%,var(--surface-soft)_58%,rgba(231,200,115,0.2)_100%)] p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="overflow-hidden rounded-2xl border border-white/70 bg-(--surface)/70">
+              <Image
+                src="/home/testemunho/dra_roberta.webp"
+                alt="Dra. Roberta Cantagalli"
+                width={1080}
+                height={1417}
+                className="h-auto w-full"
+                sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 420px"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--gold-deep)">
+                Uma Vivência Que Mudou Minha Prática
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
+                  Atendimento Individualizado
+                </span>
+                <span className="rounded-full border border-(--sand-300) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--ink-800)">
+                  Conduta Baseada em Evidência
+                </span>
+              </div>
+              <blockquote className="mt-4 space-y-3 text-lg leading-relaxed italic text-(--ink-800) sm:text-xl">
+                <p className="indent-6">
+                  <span className="font-semibold text-(--gold-deep)">&ldquo;</span>{" "}
+                  Minha jornada pessoal me ensinou que, muitas vezes, estar dentro
+                  da referência nem sempre significa estar saudável.
+                </p>
+                <p>
+                  Eu sei o que é perceber que algo está errado e ouvir que está
+                  tudo normal. Foi essa experiência que transformou minha forma de
+                  atuar.
+                </p>
+                <p>
+                  Hoje, investigo a queda capilar com o mesmo cuidado que gostaria
+                  de ter recebido.
+                </p>
+                <p className="font-semibold text-(--gold-deep)">
+                  A queda capilar não é um evento isolado: ela é um reflexo.&rdquo;
+                </p>
+              </blockquote>
+            </div>
+          </section>
+        </RevealOnScroll>
 
-        <section id="faq" className="mx-auto mt-16 w-full max-w-5xl scroll-mt-24 rounded-3xl border border-(--sand-300) bg-[linear-gradient(145deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
-          <h2 className="text-3xl sm:text-4xl">Perguntas Frequentes</h2>
-          <div className="mt-7 space-y-5">
-            {faqs.map((faq) => (
-              <article key={faq.question}>
-                <h3 className="text-lg font-semibold text-(--ink-900)">
-                  {faq.question}
-                </h3>
-                <p className="mt-1 text-(--ink-700)">{faq.answer}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        <RevealOnScroll>
+          <section id="contact" className="mx-auto mt-16 w-full max-w-5xl rounded-3xl border border-(--gold-deep)/30 bg-[linear-gradient(160deg,rgba(231,200,115,0.2)_0%,rgba(255,255,255,0.95)_45%,rgba(201,162,74,0.17)_100%)] px-6 py-10 text-center sm:px-10">
+            <h2 className="text-3xl sm:text-4xl">Pronta para iniciar seu plano de cuidado?</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-(--ink-700)">
+              Agende sua avaliação personalizada e receba um protocolo desenhado
+              para os seus objetivos de saúde capilar.
+            </p>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="contact"
+              data-cta-variant={ctaVariant}
+              data-cta-text={ctaPrincipalLabel}
+              className="mt-7 inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-8 py-3 text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
+            >
+              {ctaPrincipalLabel}
+            </a>
+          </section>
+        </RevealOnScroll>
+
+        <RevealOnScroll>
+          <section id="faq" className="mx-auto mt-16 w-full max-w-5xl scroll-mt-24 rounded-3xl border border-(--sand-300) bg-[linear-gradient(145deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
+            <h2 className="text-3xl sm:text-4xl">Perguntas Frequentes</h2>
+            <div className="mt-7 space-y-5">
+              {faqs.map((faq) => (
+                <article key={faq.question}>
+                  <h3 className="text-lg font-semibold text-(--ink-900)">
+                    {faq.question}
+                  </h3>
+                  <p className="mt-1 text-(--ink-700)">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
       </main>
 

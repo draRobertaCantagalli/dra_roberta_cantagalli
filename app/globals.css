@@ -75,7 +75,67 @@ h3 {
   }
 }
 
-header,
-main section {
-  animation: riseIn 700ms ease-out both;
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes goldLuster {
+  0% {
+    transform: translateX(-72%);
+  }
+  100% {
+    transform: translateX(72%);
+  }
+}
+
+.gold-luster {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.gold-luster::after {
+  content: "";
+  position: absolute;
+  inset: -25% -45%;
+  background: linear-gradient(
+    112deg,
+    rgba(255, 255, 255, 0) 18%,
+    rgba(231, 200, 115, 0.08) 36%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(231, 200, 115, 0.08) 64%,
+    rgba(255, 255, 255, 0) 82%
+  );
+  animation: goldLuster 6.2s linear infinite;
+  opacity: 0.52;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gold-luster-strong::after {
+  opacity: 0.68;
+  animation-duration: 5.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .gold-luster::after {
+    animation: none;
+    opacity: 0;
+  }
 }
