@@ -75,7 +75,7 @@ export default function Home() {
               data-cta="hero"
               data-cta-variant={ctaVariant}
               data-cta-text={ctaPrincipalLabel}
-              className="gold-luster gold-luster-strong text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-3 text-sm sm:text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
+              className="gold-luster gold-luster-strong text-center inline-flex rounded-full bg-[linear-gradient(135deg,var(--gold-soft)_0%,var(--gold)_52%,var(--gold-deep)_100%)] px-7 py-4 text-sm sm:text-base font-semibold text-(--ink-900) shadow-[0_14px_30px_rgba(154,116,36,0.35)] transition hover:brightness-105"
             >
               {ctaPrincipalLabel}
             </a>
