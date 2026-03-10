@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import { GaTracking } from "@/components/analytics/ga-tracking";
+import { ConsentManager } from "@/components/analytics/consent-manager";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from '@vercel/analytics/next';
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -95,7 +95,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
-        <GaTracking gaId={gaId} />
+        <ConsentManager gaId={gaId} />
         <SpeedInsights />
         <Analytics />
       </body>

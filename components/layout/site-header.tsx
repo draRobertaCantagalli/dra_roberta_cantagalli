@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type SiteHeaderProps = {
   whatsappUrl: string;
   ctaVariant?: "A" | "B";
@@ -12,9 +14,12 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-30 border-b border-(--gold-deep)/20 bg-[rgba(255,255,255,0.82)] backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3 sm:px-10 lg:px-16">
-        <p className="text-sm font-semibold tracking-[0.04em] text-(--ink-900) sm:text-base">
+        <Link
+          href="/"
+          className="text-sm font-semibold tracking-[0.04em] text-(--ink-900) transition hover:text-(--gold-deep) sm:text-base"
+        >
           Dra. Roberta Cantagalli
-        </p>
+        </Link>
 
         <a
           href={whatsappUrl}

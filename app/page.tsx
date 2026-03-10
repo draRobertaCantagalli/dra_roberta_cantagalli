@@ -148,11 +148,12 @@ export default function Home() {
         <section className="mx-auto mt-16 grid w-full max-w-5xl items-center gap-8 rounded-3xl border border-(--sand-300) bg-[linear-gradient(130deg,#fff_0%,var(--surface-soft)_58%,rgba(231,200,115,0.2)_100%)] p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="overflow-hidden rounded-2xl border border-white/70 bg-(--surface)/70">
             <Image
-              src="/home/testemunho/dra_roberta.jpg"
+              src="/home/testemunho/dra_roberta.webp"
               alt="Dra. Roberta Cantagalli"
-              width={720}
-              height={840}
+              width={1080}
+              height={1417}
               className="h-auto w-full"
+              sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 420px"
             />
           </div>
           <div>

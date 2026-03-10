@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import Link from "next/link";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -10,6 +11,14 @@ export function SiteFooter() {
         <p className="text-sm text-(--ink-700)">{siteConfig.footerCopy}</p>
         <p className="text-xs uppercase tracking-[0.16em] text-(--gold-deep)">
           © {year} {siteConfig.name}
+        </p>
+        <p className="text-xs text-(--ink-700)">
+          <Link
+            href="/politica-de-privacidade"
+            className="underline decoration-(--gold-deep)/40 underline-offset-2 transition hover:text-(--ink-900)"
+          >
+            Politica de Privacidade
+          </Link>
         </p>
         <p className="text-[0.55rem] text-[rgba(107,107,107,0.8)] lg:text-[0.75rem]">
           <a
