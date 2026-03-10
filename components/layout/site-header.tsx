@@ -10,7 +10,7 @@ export function SiteHeader({
   ctaText = "Agendar avaliação",
 }: SiteHeaderProps) {
   return (
-    <div className="sticky top-0 z-30 border-b border-(--gold-deep)/20 bg-[rgba(255,255,255,0.82)] backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-(--gold-deep)/20 bg-[rgba(255,255,255,0.82)] backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3 sm:px-10 lg:px-16">
         <p className="text-sm font-semibold tracking-[0.04em] text-(--ink-900) sm:text-base">
           Dra. Roberta Cantagalli
@@ -28,6 +28,6 @@ export function SiteHeader({
           {ctaText}
         </a>
       </div>
-    </div>
+    </header>
   );
 }

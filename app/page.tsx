@@ -27,7 +27,7 @@ export default function Home() {
         ctaText={ctaHeaderLabel}
       />
 
-      <header className="relative isolate overflow-hidden border-b border-(--gold-deep)/35 px-6 pb-16 pt-12 sm:px-10 sm:pt-16 lg:px-16 lg:py-24">
+      <section className="relative isolate overflow-hidden border-b border-(--gold-deep)/35 px-6 pb-16 pt-12 sm:px-10 sm:pt-16 lg:px-16 lg:py-24" aria-labelledby="hero-title">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
           style={{
@@ -52,7 +52,7 @@ export default function Home() {
               Dra. Roberta Cantagalli
             </p>
 
-            <h1 className="text-4xl leading-[1.02] sm:text-5xl lg:text-7xl">
+            <h1 id="hero-title" className="text-4xl leading-[1.02] sm:text-5xl lg:text-7xl">
               Tricologia e Saúde Capilar Integrativa
             </h1>
 
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       <main className="px-6 pb-16 sm:px-10 lg:px-16">
         <section className="mx-auto mt-16 w-full max-w-6xl">

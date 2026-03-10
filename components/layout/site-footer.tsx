@@ -9,7 +9,17 @@ export function SiteFooter() {
         <p className="text-lg text-(--ink-800)">{siteConfig.trustCopy}</p>
         <p className="text-sm text-(--ink-700)">{siteConfig.footerCopy}</p>
         <p className="text-xs uppercase tracking-[0.16em] text-(--gold-deep)">
-          {year} {siteConfig.name}
+          © {year} {siteConfig.name}
+        </p>
+        <p className="text-[0.55rem] lg:text-[0.75rem] text-[rgba(107,107,107,0.86)]">
+          <a
+            href={siteConfig.developerCredit.contactUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-(--ink-700)"
+          >
+            {siteConfig.developerCredit.label}
+          </a>
         </p>
       </div>
     </footer>
