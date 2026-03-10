@@ -25,28 +25,28 @@ export const services: ServiceItem[] = [
     title: "Análise Capilar com Tricoscópio",
     problem: "Identificar com precisão a causa da queda e da inflamação.",
     outcome: "Mapeamento detalhado para um plano terapêutico assertivo.",
-    image: "/protocol-camera.svg",
+    image: "/home/servicos/analise_capilar.jpg",
     alt: "Protocolo de análise capilar com tricoscópio",
   },
   {
     title: "Microagulhamento no Couro Cabeludo",
     problem: "Estimular áreas com afinamento e baixa resposta capilar.",
     outcome: "Suporte à densidade e fortalecimento dos fios no protocolo.",
-    image: "/protocol-microneedling.svg",
+    image: "/home/servicos/microagulhamento.jpg",
     alt: "Protocolo de microagulhamento no couro cabeludo",
   },
   {
     title: "Terapia a Laser",
     problem: "Tratar desequilíbrios do couro cabeludo com abordagem não invasiva.",
     outcome: "Melhora do ambiente capilar para crescimento saudável.",
-    image: "/protocol-laser.svg",
+    image: "/home/servicos/terapia_laser.jpg",
     alt: "Protocolo de terapia a laser",
   },
   {
     title: "Prescrição Personalizada",
-    problem: "Evitar protocolos genéricos que não respeitam sua história clínica.",
-    outcome: "Conduta individualizada com acompanhamento próximo da evolução.",
-    image: "/protocol-camera.svg",
+    problem: "Sem análise clínica e exames laboratoriais, não é possível individualizar o tratamento.",
+    outcome: "Conduta personalizada baseada na investigação da causa da queda.",
+    image: "/home/servicos/prescricao_personalizada.jpg",
     alt: "Protocolo de prescrição clínica personalizada",
   },
 ];
@@ -86,5 +86,10 @@ export const faqs: FaqItem[] = [
     question: "Os procedimentos são dolorosos?",
     answer:
       "A maior parte dos protocolos é bem tolerada. Quando necessário, ajustamos técnica e conforto para que o tratamento seja seguro e tranquilo.",
+  },
+  {
+    question: "O que é saúde capilar integrativa?",
+    answer:
+      "A saúde capilar integrativa considera o cabelo como um reflexo do estado geral de saúde, abordando fatores internos e externos para promover um crescimento saudável e sustentável.",
   },
 ];

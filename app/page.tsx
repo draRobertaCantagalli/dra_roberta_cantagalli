@@ -56,15 +56,14 @@ export default function Home() {
               Tricologia e Saúde Capilar Integrativa
             </h1>
 
-            <p className="max-w-2xl text-lg leading-relaxed text-[rgba(255,244,230,0.96)] sm:text-xl">
-              Tratamentos avançados para queda capilar, calvície e falhas,
-              com protocolos modernos focados em resultados naturais.
-            </p>
+            <ul className="max-w-2xl text-lg leading-relaxed text-[rgba(255,244,230,0.96)] sm:text-xl list-disc list-inside">
+              <li>Tratamentos Avançados para Queda Capilar</li>
+              <li>Investigação das Causas da Queda de Cabelo</li>
+              <li>Acompanhamento Pré e Pós Transplante Capilar</li>
+            </ul>
 
             <p className="max-w-2xl text-base leading-relaxed text-[rgba(255,244,230,0.9)] sm:text-lg">
-              Meu compromisso é oferecer cuidado clínico individualizado,
-              acompanhando de perto cada paciente com as melhores tecnologias
-              para restaurar a saúde e a confiança dos seus cabelos.
+              Meu compromisso é oferecer um cuidado clínico individualizado para a saúde do seu cabelo, com foco na investigação da causa da queda e em resultados naturais através de acompanhamento contínuo.
             </p>
 
             <a
@@ -95,7 +94,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="px-6 pb-24 sm:px-10 lg:px-16">
+      <main className="px-6 pb-16 sm:px-10 lg:px-16">
         <section className="mx-auto mt-16 w-full max-w-6xl">
           <article className="rounded-3xl border border-(--sand-300)/80 bg-[linear-gradient(160deg,#fff_0%,var(--surface-soft)_100%)] p-8 shadow-[0_16px_30px_rgba(154,116,36,0.08)] sm:p-12">
             <h2 className="text-3xl leading-tight sm:text-4xl">
@@ -125,9 +124,10 @@ export default function Home() {
                 <Image
                   src={service.image}
                   alt={service.alt}
-                  width={480}
-                  height={320}
-                  className="h-44 w-full object-cover"
+                  width={1200}
+                  height={800}
+                  className="h-44 sm:h-46 lg:h-60 w-full object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
                 />
                 <div className="space-y-3 p-6">
                   <h3 className="text-2xl">{service.title}</h3>
