@@ -116,40 +116,45 @@ export default function Home() {
           </section>
         </RevealOnScroll>
 
-        <RevealOnScroll>
-          <section className="mx-auto mt-16 w-full max-w-6xl">
+        <section className="mx-auto mt-16 w-full max-w-6xl">
+          <RevealOnScroll>
             <h2 className="text-3xl sm:text-4xl">Principais Serviços e Abordagens</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {services.map((service, index) => (
-                <RevealOnScroll key={service.title} delayMs={index * 90}>
-                  <article className="group overflow-hidden rounded-3xl border border-(--sand-300)/85 bg-[linear-gradient(165deg,#fff_0%,var(--surface-soft)_100%)] shadow-[0_14px_28px_rgba(154,116,36,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_35px_rgba(154,116,36,0.18)]">
-                    <Image
-                      src={service.image}
-                      alt={service.alt}
-                      width={1200}
-                      height={800}
-                      className="h-44 sm:h-46 lg:h-60 w-full object-cover object-center"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="space-y-3 p-6">
-                      <h3 className="text-2xl">{service.title}</h3>
-                      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
-                        Problema
-                      </p>
-                      <p className="text-(--ink-700)">{service.problem}</p>
-                      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
-                        Resultado Esperado
-                      </p>
-                      <p className="text-(--ink-700)">{service.outcome}</p>
-                    </div>
-                  </article>
-                </RevealOnScroll>
-              ))}
-            </div>
-          </section>
-        </RevealOnScroll>
+          </RevealOnScroll>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {services.map((service, index) => (
+              <RevealOnScroll
+                key={service.title}
+                delayMs={Math.floor(index / 2) * 120}
+                rootMargin="0px 0px -2% 0px"
+                className="h-full"
+              >
+                <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-(--sand-300)/85 bg-[linear-gradient(165deg,#fff_0%,var(--surface-soft)_100%)] shadow-[0_14px_28px_rgba(154,116,36,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_35px_rgba(154,116,36,0.18)]">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    width={1200}
+                    height={800}
+                    className="h-44 sm:h-46 lg:h-60 w-full object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="flex flex-1 flex-col space-y-3 p-6">
+                    <h3 className="text-2xl">{service.title}</h3>
+                    <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                      Problema
+                    </p>
+                    <p className="text-(--ink-700)">{service.problem}</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.08em] text-(--gold-deep)">
+                      Resultado Esperado
+                    </p>
+                    <p className="text-(--ink-700)">{service.outcome}</p>
+                  </div>
+                </article>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </section>
 
         <RevealOnScroll>
           <section className="mx-auto mt-16 grid w-full max-w-5xl items-center gap-8 rounded-3xl border border-(--sand-300) bg-[linear-gradient(130deg,#fff_0%,var(--surface-soft)_58%,rgba(231,200,115,0.2)_100%)] p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr]">

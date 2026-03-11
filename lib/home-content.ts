@@ -44,7 +44,8 @@ export const services: ServiceItem[] = [
   },
   {
     title: "Prescrição Personalizada",
-    problem: "Sem análise clínica e exames laboratoriais, não é possível individualizar o tratamento.",
+    problem: "Sem avaliação clínica e exames, o tratamento tende a ser genérico.",
+    //problem: "Sem análise clínica e exames laboratoriais, não é possível individualizar o tratamento.",
     outcome: "Conduta personalizada baseada na investigação da causa da queda.",
     image: "/home/servicos/prescricao_personalizada.webp",
     alt: "Protocolo de prescrição clínica personalizada",
