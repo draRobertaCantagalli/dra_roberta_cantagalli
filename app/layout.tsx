@@ -29,14 +29,13 @@ const structuredData = {
 const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700"],
-  preload: false,
+  weight: ["500", "600", "700"],
 });
 
 const body = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500","600","700"],
 });
 
 export const metadata: Metadata = {
