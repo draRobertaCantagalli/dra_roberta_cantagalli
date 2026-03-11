@@ -165,7 +165,7 @@ export default function Home() {
                 width={1080}
                 height={1417}
                 className="h-auto w-full"
-                sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 420px"
+                sizes="(max-width: 640px) 88vw, (max-width: 1024px) 84vw, 380px"
                 loading="lazy"
                 decoding="async"
               />
