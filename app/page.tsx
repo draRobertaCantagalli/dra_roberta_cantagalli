@@ -4,7 +4,6 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import {
   faqs,
-  heroBackground,
   services,
 } from "@/lib/home-content";
 
@@ -32,14 +31,14 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(26,26,26,0.28) 0%, rgba(26,26,26,0.63) 68%, rgba(26,26,26,0.78) 100%), url(${heroBackground.mobile})`,
+            backgroundImage: `linear-gradient(180deg, rgba(26,26,26,0.28) 0%, rgba(26,26,26,0.63) 68%, rgba(26,26,26,0.78) 100%)`,
           }}
           aria-hidden="true"
         />
         <div
           className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat lg:block"
           style={{
-            backgroundImage: `linear-gradient(108deg, rgba(26,26,26,0.86) 0%, rgba(26,26,26,0.74) 28%, rgba(26,26,26,0.57) 50%, rgba(26,26,26,0.36) 71%, rgba(26,26,26,0.2) 86%, rgba(26,26,26,0.1) 100%), url(${heroBackground.desktop})`,
+            backgroundImage: `linear-gradient(108deg, rgba(26,26,26,0.86) 0%, rgba(26,26,26,0.74) 28%, rgba(26,26,26,0.57) 50%, rgba(26,26,26,0.36) 71%, rgba(26,26,26,0.2) 86%, rgba(26,26,26,0.1) 100%)`,
           }}
           aria-hidden="true"
         />

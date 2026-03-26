@@ -15,11 +15,6 @@ export type BulletItem = {
   label: string;
 };
 
-export const heroBackground = {
-  desktop: "/home/banner_principal/hero-desktop.jpg",
-  mobile: "/home/banner_principal/hero-mobile.jpg",
-} as const;
-
 export const services: ServiceItem[] = [
   {
     title: "Análise Capilar com Tricoscópio",
@@ -45,7 +40,6 @@ export const services: ServiceItem[] = [
   {
     title: "Prescrição Personalizada",
     problem: "Sem avaliação clínica e exames, o tratamento tende a ser genérico.",
-    //problem: "Sem análise clínica e exames laboratoriais, não é possível individualizar o tratamento.",
     outcome: "Conduta personalizada baseada na investigação da causa da queda.",
     image: "/home/servicos/prescricao_personalizada.webp",
     alt: "Protocolo de prescrição clínica personalizada",
